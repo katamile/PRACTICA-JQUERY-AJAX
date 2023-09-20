@@ -1,0 +1,78 @@
+﻿@model List<Views_Products_Index>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th>#</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>PVP</th>
+                <th>Categoría</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaProductos">
+            <!-- Aquí se agregarán las filas de datos -->
+        </tbody>
+    </table>
+
+    <!-- Modal para los detalles del producto -->
+    <div class="modal fade" id="detalleProductoModal" tabindex="-1" role="dialog" aria-labelledby="detalleProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleProductoModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img id="imagenProducto" src="" alt="Imagen del Producto" width="400px" class="img-fluid">
+                            </div>
+                            <div class="col-md-6">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="titulo">Título:</label>
+                                        <label class="form-control" id="tituloProducto"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion">Descripción:</label>
+                                        <label class="form-control" id="descripcionProducto"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion">PVP:</label>
+                                        <label class="form-control" id="pvpProducto"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion">Categoría:</label>
+                                        <label class="form-control" id="categoriaProducto"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary cerrar-btn" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+    <script type ="module" src="/js/Productos/productsList.js"></script>
+    <script type="module" src="/js/Productos/productsVer.js"></script>
+
